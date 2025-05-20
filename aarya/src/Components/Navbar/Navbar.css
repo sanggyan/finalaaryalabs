@@ -1,0 +1,156 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 5%;
+  width: 90%;
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+  background: transparent;
+}
+
+.navbar img {
+  width: 130px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.navbar img:hover {
+  transform: scale(1.05);
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 2.5rem;
+}
+
+.nav-menu li {
+  cursor: pointer;
+}
+
+.nav-menu li a {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: white;
+  transition: all 0.3s ease;
+  position: relative;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  display: block;
+}
+
+.nav-menu li a:hover {
+  color: #037ef3;
+}
+
+/* Underline effect for active menu item */
+.nav-menu li a.active {
+  color: white;
+}
+
+.nav-menu li a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #037ef3;
+  animation: underline 0.3s ease;
+}
+
+/* Hover underline effect */
+.nav-menu li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #037ef3;
+  transition: width 0.3s ease;
+}
+
+.nav-menu li a:hover::after {
+  width: 100%;
+}
+
+@keyframes underline {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.nav-connect {
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  background-color: #037ef3;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+  text-decoration: none;
+  border: none;
+  font-weight: 600;
+}
+
+.nav-connect:hover {
+  transform: scale(1.05);
+  background-color: #0268c6;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1024px) {
+  .nav-menu {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 5%;
+  }
+  
+  /* Mobile menu styles */
+  .nav-menu {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 80%;
+    height: calc(100vh - 80px);
+    background: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    transition: left 0.3s ease;
+  }
+  
+  .nav-menu.active {
+    left: 0;
+  }
+  
+  .nav-menu li a {
+    font-size: 1.2rem;
+  }
+  
+  .nav-connect {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+  }
+  
+  /* Mobile menu button */
+  .mobile-menu-btn {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+}

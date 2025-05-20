@@ -1,0 +1,132 @@
+/* Services.css */
+.services {
+  padding: 5rem 2rem;
+  
+  position: relative;
+  overflow: hidden;
+}
+
+.services::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: 0;
+}
+
+.services-title {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.services-title h1 {
+  font-size: 75px;
+  font-weight: 700;
+  color: white;
+  display: inline-block;
+}
+
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.services-format {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(3, 126, 243, 0.2);
+  border-radius: 1rem;
+  padding: 2.5rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.services-format:hover {
+  transform: translateY(-0.5rem);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 1rem 2rem rgba(3, 126, 243, 0.1);
+  border-color: rgba(3, 126, 243, 0.4);
+}
+
+.services-format h3 {
+  font-size: 1.2rem;
+  color: #037ef3;
+  margin-bottom: 0.5rem;
+}
+
+.services-format h2 {
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.services-format h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 3rem;
+  height: 2px;
+  background: linear-gradient(90deg, #0258c7, #037ef3);
+}
+
+.services-format p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #d1d1d1;
+  margin-top: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .services-title h1 {
+    font-size: 3rem;
+  }
+  
+  .services-container {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .services {
+    padding: 4rem 1.5rem;
+  }
+  
+  .services-title h1 {
+    font-size: 2.5rem;
+  }
+  
+  .services-format {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .services {
+    padding: 3rem 1rem;
+  }
+  
+  .services-title h1 {
+    font-size: 2rem;
+  }
+  
+  .services-container {
+    grid-template-columns: 1fr;
+  }
+}

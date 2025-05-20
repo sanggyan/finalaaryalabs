@@ -1,0 +1,73 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* Full viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Prevents background image overflow */
+  text-align: center;
+  color: #fff; /* Assuming light text on dark background */
+}
+
+.background-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; 
+  opacity: 0.34;/* Places background behind content */
+}
+
+.background-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image covers entire area */
+  object-position: center; /* Centers the image */
+}
+
+.hero-content {
+  max-width: 800px; /* Optimal reading width */
+  padding: 2rem;
+  position: relative;
+  z-index: 1; /* Ensures content stays above background */
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Improves readability */
+}
+.hero-content h1 span{
+  color:#037ef3
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.hero-connect {
+  display: inline-block;
+  background: #4a6bff; /* Example accent color */
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-connect:hover {
+  background: #3a5bef;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}

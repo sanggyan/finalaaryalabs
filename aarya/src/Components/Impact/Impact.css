@@ -1,0 +1,269 @@
+/* About Section - Modern Refresh */
+.about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+  margin: 5rem auto;
+  max-width: 1400px;
+  padding: 0 2rem;
+  color: #f5f5f5;
+}
+
+.section-header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 75px;
+  font-weight: 700;
+  color: white;
+  display: inline-block;
+}
+
+/* Content Grid Layout */
+.about-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  width: 100%;
+  align-items: center;
+}
+
+/* Image Container - Fixed Aspect Ratio */
+.about-image-container {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid rgba(3, 126, 243, 0.3);
+  aspect-ratio: 1/1;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s ease;
+}
+
+.about-image-container:hover {
+  transform: translateY(-0.5rem);
+  border-color: rgba(3, 126, 243, 0.6);
+}
+
+.about-image-container:hover .about-image {
+  transform: scale(1.05);
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(2, 88, 199, 0.1), transparent);
+}
+
+/* Text Content Cards */
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.mission-card, 
+.vision-card {
+  padding: 2.5rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(3, 126, 243, 0.2);
+  backdrop-filter: blur(12px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mission-card:hover, 
+.vision-card:hover {
+  transform: translateY(-0.5rem);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 1rem 2rem rgba(3, 126, 243, 0.1);
+  border-color: rgba(3, 126, 243, 0.4);
+}
+
+.mission-card h2, 
+.vision-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #037ef3;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.mission-card h2::after, 
+.vision-card h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 3rem;
+  height: 2px;
+  background: linear-gradient(90deg, #0258c7, #037ef3);
+}
+
+.mission-card p, 
+.vision-card p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #e0e0e0;
+}
+
+/* Quote Section */
+.about-quote {
+  width: 100%;
+  padding: 4rem;
+  text-align: center;
+  background: rgba(0, 40, 85, 0.2);
+  border-radius: 1rem;
+  border: 1px solid rgba(3, 126, 243, 0.2);
+  backdrop-filter: blur(8px);
+  transition: all 0.4s ease;
+  margin: 2rem 0;
+}
+
+.about-quote:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: 0 0.5rem 1.5rem rgba(3, 126, 243, 0.1);
+}
+
+.about-quote h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  font-style: italic;
+  background: linear-gradient(90deg, #f5f5f5, #037ef3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.4;
+}
+
+/* Impact Section */
+.impact-section {
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.achievement-card {
+  padding: 3rem 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(3, 126, 243, 0.2);
+  backdrop-filter: blur(8px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.achievement-card:hover {
+  transform: translateY(-0.5rem);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 1rem 2rem rgba(3, 126, 243, 0.1);
+}
+
+.achievement-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(3, 126, 243, 0.05) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.achievement-card:hover::before {
+  opacity: 1;
+}
+
+.achievement-value {
+  margin-bottom: 1rem;
+}
+
+.countup {
+  font-size: 3.5rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #0258c7, #037ef3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.achievement-text p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #d1d1d1;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .about-section {
+    gap: 4rem;
+    padding: 0 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 3.5rem;
+  }
+  
+  .about-content {
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-image-container {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .achievements-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .about-quote h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    gap: 3rem;
+    padding: 0 1rem;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+  }
+  
+  .mission-card, 
+  .vision-card {
+    padding: 1.5rem;
+  }
+  
+  .about-quote {
+    padding: 2rem 1rem;
+  }
+}
